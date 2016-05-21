@@ -13,15 +13,15 @@ var TestGenerator = module.exports = function TestGenerator(args, options, confi
   this.appname = this._.camelize(this._.slugify(this._.humanize(this.appname)));
 
   this.on('end', function () {
-    // this.installDependencies({ skipInstall: options['skip-install'] });
-    this.installDependencies({
-      npm: this.environment === 'Node' ? true : false,
-      bower: this.environment === 'browser' ? true : false,
-      skipInstall: options['skip-install'],
-      callback: function() {
-        console.log('Everything is ready!');
-      }
-    });
+    this.installDependencies({ skipInstall: true });
+    // this.installDependencies({
+    //   npm: this.environment === 'Node' ? true : false,
+    //   bower: this.environment === 'browser' ? true : false,
+    //   skipInstall: options['skip-install'],
+    //   callback: function() {
+    //     console.log('Everything is ready!');
+    //   }
+    // });
   });
 
 
